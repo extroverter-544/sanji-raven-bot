@@ -245,17 +245,19 @@ REPLY_ERROR = """<code>Use this command as a replay to any telegram message with
     
 @Bot.on_message(filters.command('start') & filters.private)
 async def not_joined(client: Client, message: Message):
-   buttons = [[
-            InlineKeyboardButton(
+   buttons = [
+       [
+      InlineKeyboardButton(
                 "Join 1",
-                url ="https://t.me/+9zWHreWb5aZhOTQ1"),
-             InlineKeyboardButton(
+                url="https://t.me/+9zWHreWb5aZhOTQ1"),
+      InlineKeyboardButton(
                 "Join 2",
-                url ="https://t.me/+MZi3cZma-clhM2Zl"),
-            InlineKeyboardButton(
+                url="https://t.me/+MZi3cZma-clhM2Zl"),
+     InlineKeyboardButton(
                 "Join 3",
-                url = client.invitelink)
-        ]]
+                url= client.invitelink)
+        ]
+   ]
     try:
         buttons.append(
             [
